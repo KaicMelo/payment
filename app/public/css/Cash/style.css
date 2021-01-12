@@ -13,6 +13,7 @@
 }
 #quantity{
     width: 40%;
+    border: 1px solid #00000078; 
 }
 #cash-save{
     display: flex;
@@ -24,9 +25,24 @@
     width: 40px;
     margin-bottom: 30px;
 }
+#exit{
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+}
+
+.swal-title{
+    font-size: 4rem;
+}
+.swal-text{
+    font-size: 3rem;
+}
+.swal-button--confirm{
+    font-size: 2rem;
+}
 @media(min-width: 1000px){
 
-    .img-responsive{
+    /* .img-responsive{
         width: 250px;
         display: flex; 
         justify-content: center;
@@ -35,6 +51,6 @@
 
     .register{
         font-size: 1.2rem;
-    }
+    } */
     
 }

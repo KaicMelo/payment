@@ -1,6 +1,6 @@
 module.exports.index = function (application, req, res) {
     res.render('reports/index');
-        return;
+    return;
     if (req.session.authorized == true) {
         res.render('reports/index');
         return;
@@ -8,7 +8,23 @@ module.exports.index = function (application, req, res) {
     res.render('login/index');
     return;
 }
-module.exports.MyUser = function (application, req, res) {
+module.exports.day = function (application, req, res) {
+    var connection = application.config.dbConnection();
+    var reportsModel = new application.app.models.ReportsDAO(connection);
+
+    var dadosForm = req.query;
+
+    reportsModel.day(dadosForm.start, dadosForm.end, function (error, result) {
+        if (result.length > 0) {
+            res.status(200).json({ data: result });
+            return;
+        }
+        res.status(404).send('Error');
+        return;
+    });
+}
+
+module.exports.month = function (application, req, res) {
     var connection = application.config.dbConnection();
     var usersModel = new application.app.models.UsersDAO(connection);
     var id = req.session.aut_id;

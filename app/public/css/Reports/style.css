@@ -4,37 +4,67 @@
 .jumbotron .lead{
     font-size: 30pt;
 }
-.container-cash .input-group-text{
-    font-size: 25pt;
-}
-.container-cash input{
-    height: 5rem;
-    font-size: 25pt;
-}
 #quantity{
     width: 40%;
-}
-#cash-save{
-    display: flex;
-    margin: 0 auto;
-    margin-top: 4rem;
-    font-size: 3rem;
 }
 #return-back-redo-arrow{
     width: 40px;
     margin-bottom: 30px;
 }
+.form-group{
+    font-size: 3rem;
+}
+#selectReports, #date-input-start, #date-input-end{
+    font-size: 1.8rem;
+}
+#cash-save{
+    display: flex;
+    margin: 0 auto;
+}
+#exit{
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+}
+.swal-title{
+    font-size: 4rem;
+}
+.swal-text{
+    font-size: 3rem;
+}
+.swal-button--confirm{
+    font-size: 2rem;
+}
+#table_id{
+    width: 90%;
+}
+#table_id thead tr{
+    font-size: 3rem;
+}
+#table_id thead tr{
+    font-size: 3rem;
+}
+#table_id tbody tr{
+    font-size: 2rem;
+}
+.product-line{
+    max-width: 15ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.dt-button{
+    font-size: 1.8rem;
+}
+.dataTables_info{
+    font-size: 1.6rem;
+}
+.paginate_button{
+    font-size: 1.6rem;
+}
+#table_id_filter{
+    font-size: 1.8rem;
+}
 @media(min-width: 1000px){
-
-    .img-responsive{
-        width: 250px;
-        display: flex; 
-        justify-content: center;
-        align-items: center; 
-    }
-
-    .register{
-        font-size: 1.2rem;
-    }
-    
+         
 }
