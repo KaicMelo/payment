@@ -19,8 +19,8 @@ module.exports.create = function(application,req,res)
     for(var i=0;i<=dadosForm.quantity;i+=2)
     {
         data.push({
-            // "pt_user_id":1,
-            "pt_user_id":req.session.aut_id,
+            "pt_user_id":1,
+            // "pt_user_id":req.session.aut_id,
             "product":dadosForm.data[i].value,
             "price":dadosForm.data[i+1].value,
         });

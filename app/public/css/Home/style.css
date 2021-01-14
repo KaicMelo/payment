@@ -10,10 +10,11 @@ body{
 .grid-item {
     /* background-color: rgba(255, 255, 255, 0.8); */
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 10px;
     margin: 10px;
     font-size: 30px;
     text-align: center;
+    border-radius: 1rem;
+    width: 90%;
   }
   .img-responsive{
       width: 80%;

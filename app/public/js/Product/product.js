@@ -34,33 +34,12 @@ $(function () {
                     <div class="input-group-prepend">
                         <div class="input-group-text">${i + 1}</div>
                     </div>
-                    <select class="form-control product-info" name="product_${i + 1}" id="select-products">
-                        ${dataOption}
-                    </select>
+                    <input type="text" class="form-control product-info" name="product_${i + 1}" id="product_${i + 1}" placeholder="produto" required>
                     <input type="text" class="form-control money" name="price_${i + 1}" id="price_${i + 1}" placeholder="Preço" required>
                 </div>
             `);
-            $('.money').mask("#.##0,00", { reverse: true }); 
-
-            // $( ".money" ).on('change',function () {
-            //     money +=this.value;
-            //     $('.money').each(function () { 
-            //         if(this.value == ''){
-            //             money +=this.value;
-            //         }
-            //     });
-            //     $("#total_cash").val(money);
-            // });
-            // $("#select-products").append(dataOption);
-        }
-        //  <div class="input-group mb-2">
-        //     <div class="input-group-prepend">
-        //         <div class="input-group-text">Total:</div>
-        //     </div>
-        //     <input type="text" class="form-control" id='total_cash' disabled="">
-        //     <input type="text" class="form-control money" id='money_client' placeholder="Dinheiro">
-        //     <input type="text" class="form-control money" placeholder="Troco" disabled="" >
-        // </div>
+            $('.money').mask("#.##0,00", { reverse: true });  
+        } 
         $("#form-data").append(`
         <hr />
 
@@ -77,7 +56,7 @@ $(function () {
         var formData = $("#form-data").serializeArray();
 
         $.ajax({
-            url: "/cash/create",
+            url: "/products/create",
             method: "POST",
             data: { data: formData, quantity: $("#quantity_products").val() },
         }).done(function (data) {
