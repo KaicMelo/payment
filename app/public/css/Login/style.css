@@ -1,3 +1,6 @@
+body{
+    font-family: 'Patrick Hand', cursive;
+}
 .img-responsive{
     width: 100%;
     display: flex; 
@@ -14,13 +17,14 @@
     width: 100%;
     height:7rem;
     font-size: 40pt;
-    background-color: #6565ee;
+    background-color: #04044a;
+    color: #fff;
 }
 label{
     font-size: 60pt;
 }
 input{
-    border: 2px solid #6565ee;
+    border: 2px solid #04044a;
 }
 .alert-danger{
     font-size: 30pt;

@@ -1,3 +1,6 @@
+body{
+    font-family: 'Patrick Hand', cursive;
+}
 .grid-container{
     display: grid;
     grid-template-columns: auto auto;
@@ -13,7 +16,7 @@
     text-align: center;
   }
   .img-responsive{
-      width: 60%;
+      width: 80%;
   }
 .grid-item a{
     text-decoration: none;
@@ -35,7 +38,7 @@
 }
 
 figcaption{
-    font-size: 2.5rem;
+    font-size: 3.4rem;
 }
 
 @media(min-width: 1000px){ 

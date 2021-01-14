@@ -1,3 +1,6 @@
+body{
+    font-family: 'Patrick Hand',cursive;
+}
 .jumbotron h1{
     font-size: 60pt;
 }
@@ -20,6 +23,7 @@
     margin: 0 auto;
     margin-top: 4rem;
     font-size: 3rem;
+    background-color: #04044a;
 }
 #return-back-redo-arrow{
     width: 40px;

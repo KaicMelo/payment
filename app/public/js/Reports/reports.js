@@ -1,4 +1,18 @@
 $(function () {
+    $('#selectReports').on('change', '', function (e) {
+        var select = $('#selectReports').val();
+        if (select == 'day') {
+            $('#table_id').append(`
+                <thead style="background-color: #e9ecef">
+                    <tr> 
+                        <th>Vendido por</th>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+            `)
+        }
+    });
 
     $("#cash-save").on('click', function () {
         var type = $("#selectReports").val();
@@ -12,17 +26,8 @@ $(function () {
                 method: "GET",
                 data: { start: start, end: end }
             }).done(function (data) {
+                $('#table_id').DataTable().destroy();
                 if (type == 'day') {
-                
-                    $('#table_id').append(`
-                        <thead style="background-color: #e9ecef">
-                            <tr> 
-                                <th>Vendido por</th>
-                                <th>Produto</th>
-                                <th>Preço</th>
-                            </tr>
-                        </thead>
-                    `)
 
                     $('#table_id').dataTable({
                         "dom": 'Bfrtip',
@@ -33,9 +38,9 @@ $(function () {
                         "language": {
                             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese.json"
                         },
-                        "columns": [ 
+                        "columns": [
                             { "data": "pt_user_id" },
-                            { "data": "product",className: "product-line"},
+                            { "data": "product", className: "product-line" },
                             { "data": "price" },
                         ]
                     });
