@@ -1,6 +1,4 @@
 module.exports.index = function (application, req, res) {
-    res.render('reports/index');
-    return;
     if (req.session.authorized == true) {
         res.render('reports/index');
         return;

@@ -7,9 +7,6 @@ var consign = require('consign');
 //IMPORTAR O MODULO FRAMEWORK BODY-PARSE
 var bodyParse = require('body-parser');
 
-//IMPORTAR O MODULO FRAMEWORK EXPRESS-VALIDATOR
-var expressValidator = require('express-validator');
-
 //IMPORTAR O MODULO FRAMEWORK EXPRESS-SESSION
 var expressSession = require('express-session');
 
@@ -24,10 +21,7 @@ app.set('views','./app/views');
 app.use(express.static('./app/public'));
 
 //CONFIGURAR O MIDDLEWARE BODY-PARSE
-app.use(bodyParse.urlencoded({extended:true}));
-
-//CONFIGURAR O MIDDLEWARE EXPRESS-VALIDATOR
-app.use(expressValidator());
+app.use(bodyParse.urlencoded({extended:true})); 
 
 //CONFIGURAR O MIDDLEWARE EXPRESS-SESSION
 app.use(expressSession({

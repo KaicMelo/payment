@@ -1,6 +1,4 @@
 module.exports.product = function (application, req, res) {
-    res.render('product/index');
-    return;
     if (req.session.authorized == true) {
         res.render('home/index');
         return;
@@ -9,10 +7,9 @@ module.exports.product = function (application, req, res) {
     return;
 }
 module.exports.consult = function (application, req, res) {
-    res.render('product/consult');
-    return;
+
     if (req.session.authorized == true) {
-        res.render('home/index');
+        res.render('product/consult');
         return;
     }
     res.render('login/index');
