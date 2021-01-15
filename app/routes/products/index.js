@@ -6,7 +6,7 @@ module.exports = function(application){
         application.app.controllers.productsController.products(application,req,res);   
     }); 
     application.post('/products/create',function(req,res){
-        application.app.controllers.productsController.create(application,req,res);   
+        application.app.controllers.productsController.createProduct(application,req,res);   
     }); 
     application.get('/products/consult',function(req,res){
         application.app.controllers.productsController.consult(application,req,res);

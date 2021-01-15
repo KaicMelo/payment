@@ -1,6 +1,6 @@
 module.exports.product = function (application, req, res) {
     if (req.session.authorized == true) {
-        res.render('home/index');
+        res.render('product/index');
         return;
     }
     res.render('login/index');
@@ -28,12 +28,12 @@ module.exports.products = function (application, req, res) {
         return;
     });
 }
-module.exports.create = function (application, req, res) {
+module.exports.createProduct = function (application, req, res) {
     var dadosForm = req.body;
 
     var data = [];
 
-    for (var i = 0; i <= dadosForm.quantity; i += 2) {
+    for (var i = 0; i <= dadosForm.data.length/2; i += 2) {
         data.push({
             "name": dadosForm.data[i].value,
             "price": dadosForm.data[i + 1].value
