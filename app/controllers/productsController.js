@@ -1,8 +1,17 @@
 module.exports.product = function (application, req, res) {
     res.render('product/index');
     return;
-    if(req.session.authorized == true)
-    {
+    if (req.session.authorized == true) {
+        res.render('home/index');
+        return;
+    }
+    res.render('login/index');
+    return;
+}
+module.exports.consult = function (application, req, res) {
+    res.render('product/consult');
+    return;
+    if (req.session.authorized == true) {
         res.render('home/index');
         return;
     }
@@ -22,29 +31,40 @@ module.exports.products = function (application, req, res) {
         return;
     });
 }
-module.exports.create = function(application,req,res)
-{
+module.exports.create = function (application, req, res) {
     var dadosForm = req.body;
 
     var data = [];
 
-    for(var i=0;i<=dadosForm.quantity;i+=2)
-    {
+    for (var i = 0; i <= dadosForm.quantity; i += 2) {
         data.push({
-            "name":dadosForm.data[i].value,
-            "price":dadosForm.data[i+1].value
+            "name": dadosForm.data[i].value,
+            "price": dadosForm.data[i + 1].value
         });
-    } 
+    }
 
     var connection = application.config.dbConnection();
     var productsModel = new application.app.models.ProductsDAO(connection);
-    
-    productsModel.create(data,function(error,resultUser){
-        if(resultUser.length  == 0)
-        { 
-            res.status(404).json({message: 'Erro ao realizar login'});  
-        }else{
-            res.status(200).json({message: 'produto cadastrado com sucesso'});
+
+    productsModel.create(data, function (error, resultUser) {
+        if (resultUser.length == 0) {
+            res.status(404).json({ message: 'Erro ao cadastrar produto' });
+        } else {
+            res.status(200).json({ message: 'produto cadastrado com sucesso' });
         }
     });
+}
+module.exports.delete = function (application, req, res) {
+    var dadosForm = req.body;
+
+    var connection = application.config.dbConnection();
+    var productsModel = new application.app.models.ProductsDAO(connection);
+
+    productsModel.delete(dadosForm.id, function (error, resultUser) {
+        if (resultUser.length == 0) {
+            res.status(404).json({ message: 'Erro ao deletar' });
+        } else {
+            res.status(200).json({ message: 'Produto deletado com sucesso' });
+        }
+    }); 
 }

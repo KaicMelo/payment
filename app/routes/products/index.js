@@ -8,4 +8,10 @@ module.exports = function(application){
     application.post('/products/create',function(req,res){
         application.app.controllers.productsController.create(application,req,res);   
     }); 
+    application.get('/products/consult',function(req,res){
+        application.app.controllers.productsController.consult(application,req,res);
+    }); 
+    application.delete('/products/delete',function(req,res){
+        application.app.controllers.productsController.delete(application,req,res);
+    }); 
 }

@@ -25,6 +25,7 @@ label{
     font-size: 60pt;
 }
 input{
+    outline: 0;
     border: 2px solid #04044a;
     border-radius: 1rem;
 }

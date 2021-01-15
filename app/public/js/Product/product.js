@@ -4,29 +4,33 @@ $(function () {
     $.ajax({
         url: "/products",
         method: "GET",
-    }).done(function(data) {
+    }).done(function (data) {
         dataProducts = data.data;
-    }).fail(function() {
+
+        // $('#table_id').dataTable({
+        //     "dom": 'Bfrtip',
+        //     "buttons": [
+        //         'copy', 'csv', 'excel', 'pdf', 'print'
+        //     ],
+        //     data: data.data,
+        //     "language": {
+        //         "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese.json"
+        //     },
+        //     "columns": [ 
+        //         { "data": "name", className: "product-line" },
+        //         { "data": "price" },
+        //         { "data": "id" },
+        //     ]
+        // });
+
+    }).fail(function () {
         console.log('algo deu errado');
     });
-    
+
     $("#quantity").keyup(function () {
         $("#form-data").empty();
         // money = '';
         var quantity = $("#quantity").val();
-
-        $("#form-data").append(`
-            <input type="hidden" id="quantity_products" value="${quantity}">
-        `)
-
-        var dataOption;
-        dataOption = `<option selected="" disabled="">Selecione</option>`
-
-        for(var i = 0; i < dataProducts.length; i++) {
-
-            dataOption += `<option value="${dataProducts[i].id}">${dataProducts[i].name}</option>`
-
-        }
 
         for (var i = 0; i < quantity; i++) {
             $("#form-data").append(`
@@ -38,14 +42,15 @@ $(function () {
                     <input type="text" class="form-control money" name="price_${i + 1}" id="price_${i + 1}" placeholder="Preço" required>
                 </div>
             `);
-            $('.money').mask("#.##0,00", { reverse: true });  
-        } 
-        $("#form-data").append(`
-        <hr />
-
-        <button class="btn btn-lg btn-primary" id="cash-save">Salvar</button>
-        `);
-
+            $('.money').mask("#.##0,00", { reverse: true });
+        }
+        if (quantity > 0) {
+            $("#form-data").append(`
+            <hr />
+    
+            <button class="btn btn-lg btn-primary" id="cash-save">Salvar</button>
+            `);
+        }
     });
 
     $('#money_client').mask("#.##0,00", { reverse: true });
@@ -75,4 +80,8 @@ $(function () {
         });
     });
 
+    $("#consult").on('click',function(){
+        // alert('ok')
+        $('#exampleModal').modal('show');
+    })
 });

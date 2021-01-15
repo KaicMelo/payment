@@ -36,7 +36,6 @@ body{
     color: black;
     font-size: 2rem;
 }
-
 .swal-title{
     font-size: 4rem;
 }
@@ -46,20 +45,54 @@ body{
 .swal-button--confirm{
     font-size: 2rem;
 }
-.product-info{
+#form-data{
+    margin-bottom:10rem ;
+}
+#table_id{
+    width: 100% !important;
+}
+#table_id thead tr{
+    font-size: 3rem;
+}
+#table_id thead tr{
+    font-size: 3rem;
+}
+#table_id tbody tr{
+    
+    font-size: 2rem;
+}
+.product-line{
+    max-width: 15ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.dt-button{
+    font-size: 1.8rem;
+}
+.dataTables_info{
+    font-size: 1.6rem;
+}
+.paginate_button{
+    font-size: 1.6rem;
+}
+#table_id_filter{
+    font-size: 1.8rem;
+}
+.nav-link{
+    font-size: 2.9rem;
+}
+#consult{
+    outline: 0;
+    border-radius: 1rem;
     font-size: 2.7rem;
+    background-color: #04044a;
+    color: #fff;
+}
+#consult-link{
+    text-decoration: none;
+    color: #fff;
 }
 @media(min-width: 1000px){
-
-    /* .img-responsive{
-        width: 250px;
-        display: flex; 
-        justify-content: center;
-        align-items: center; 
-    }
-
-    .register{
-        font-size: 1.2rem;
-    } */
     
 }
